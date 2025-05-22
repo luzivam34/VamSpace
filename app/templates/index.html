@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Ola, Mundo</h1>
-    
+    <!--Cabeçario começa aqui-->
+    <header>
+        <h1>Titulos</h1>
+    </header>
+
+    <!--O principais começa aqui -->
+    <main>
+        <h2>Principais</h2>
+        <p id="test"></p>
+    </main>
+
+    <!--O Rodapé começa aqui -->
+    <footer>
+        <h4>Rodapé</h4>
+    </footer>
+    <script src="{{ url_for('static' , filename='js/scripts.js') }}"></script>
 </body>
 </html>
