@@ -4,10 +4,10 @@ def create_app():
 
     app = Flask(__name__)
 
-    @app.route('/')
-    def index():
-        return render_template("index.html")
 
+
+    from .routes.routes import main
+    app.register_blueprint(main)
 
 
     return app
