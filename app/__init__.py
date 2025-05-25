@@ -13,9 +13,5 @@ def create_app():
     from app.routes.clubes import bp as clubes_bp
     app.register_blueprint(clubes_bp)
 
-    with app.app_context():
-        from app.models.clubes import db
-        db.create_all()
-
 
     return app

@@ -9,7 +9,7 @@ bp = Blueprint('clubes', __name__, url_prefix='/clubes')
 @bp.route('/')
 def index():
     clubes = Clube.query.all()
-    return render_template("clubes/index.html", clubes=clubes)
+    return render_template("clubes/index.html", clubes=clubes, current_year=datetime.now().year)
 
 @bp.route("/create", methods=['GET','POST'])
 def create():
@@ -17,9 +17,9 @@ def create():
            nome=request.form['nome']
            cidade=request.form['cidade']
            estado=request.form['estado']
-           fundaçao=datetime.strptime(request.form['fundacao'], '%Y-%m-%d')     
+           fundacao=datetime.strptime(request.form['fundacao'], '%Y-%m-%d')     
            
-           clube = Clube(nome=nome, cidade=cidade, estado=estado, fundaçao=fundaçao)
+           clube = Clube(nome=nome, cidade=cidade, estado=estado, fundacao=fundacao)
            db.session.add(clube)
            db.session.commit()
            return redirect(url_for('clubes.index'))
