@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Cadastrar Clubes</h2>
+<form method="POST">
+    <input type="text" name="nome" placeholder="Nome" required><br>
+    <input type="text" name="cidade" placeholder="Cidade" required><br>
+    <input type="text" name="estado" placeholder="Estado" maxlength="2" required><br>
+    <input type="date" name="fundacao" required><br>
+    <button type="submit">Salvar</button>
+</form>
+{% endblock %}

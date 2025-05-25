@@ -1,0 +1,21 @@
+{% extends 'bese.html' %}
+{%  block content %}
+<h2>Clubes de Futebol</h2>
+<a href="{{ url_for('clubes.create') }}">Cadastro de clube</a>
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Fundação</th>
+    </tr>
+    {% for clube in clubes %}
+    <tr>
+        <td>{{ clube.nome }}</td>
+        <td>{{ clube.cidade }}</td>
+        <td>{{ clube.estado }}</td>
+        <td>{{ clube.fundacao.strftime('%d/%m/%Y') }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
