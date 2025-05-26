@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-def create_app():
 
+def create_app():
     app = Flask(__name__)
     app.config.from_object('config.Config')
 
@@ -12,6 +12,5 @@ def create_app():
 
     from app.routes.clubes import bp as clubes_bp
     app.register_blueprint(clubes_bp)
-
 
     return app

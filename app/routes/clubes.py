@@ -11,17 +11,18 @@ def index():
     clubes = Clube.query.all()
     return render_template("clubes/index.html", clubes=clubes, current_year=datetime.now().year)
 
-@bp.route("/create", methods=['GET','POST'])
+
+@bp.route("/create", methods=['GET', 'POST'])
 def create():
     if request.method == 'POST':
-           nome=request.form['nome']
-           cidade=request.form['cidade']
-           estado=request.form['estado']
-           fundacao=datetime.strptime(request.form['fundacao'], '%Y-%m-%d')     
-           
-           clube = Clube(nome=nome, cidade=cidade, estado=estado, fundacao=fundacao)
-           db.session.add(clube)
-           db.session.commit()
-           return redirect(url_for('clubes.index'))
-    
+        nome = request.form['nome']
+        cidade = request.form['cidade']
+        estado = request.form['estado']
+        fundacao = datetime.strptime(request.form['fundacao'], '%Y-%m-%d')
+
+        clube = Clube(nome=nome, cidade=cidade, estado=estado, fundacao=fundacao)
+        db.session.add(clube)
+        db.session.commit()
+        return redirect(url_for('clubes.index'))
+
     return render_template('clubes/create.html')

@@ -1,3 +1,6 @@
+import os
+
+
 class Config:
     SECRET_KEY = 'sua-chave-secreta'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///clubes.db'

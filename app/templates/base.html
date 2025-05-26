@@ -4,54 +4,8 @@
   <meta charset="UTF-8">
   <title>{% block title %}Cadastro de Clubes{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
-      margin: 0;
-      padding: 0;
-    }
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
 
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #0055a5;
-      padding: 0.5rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #003366;
-      color: white;
-      margin-top: 2rem;
-    }
   </style>
 </head>
 <body>
